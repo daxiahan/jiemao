@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8201
+spring:
+  profiles: dev
+  application:
+    name: oa-config-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://oa7dev.com:7001/eureka/
+---
+server:
+  port: 8202
+spring: 
+  profiles: test
+  application:
+    name: oa-config-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://oatest.com:7001/eureka/
